@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moss &amp; Miles — 山径与信号（首页原型预览）</title>
+<style>
+  :root{
+    --paper:#f5f4f0;
+    --paper-warm:#efede6;
+    --pine:#2f4a3c;
+    --pine-deep:#22382d;
+    --dawn:#d97b29;
+    --ink:#2b2f2a;
+    --grey:#8b8f86;
+    --line:#dcdad1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.9;
+  }
+  .serif{font-family:'Songti SC','Noto Serif SC','SimSun',serif;}
+  .mono{font-family:'SF Mono','Consolas','Courier New',monospace;font-feature-settings:'tnum';}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    max-width:920px;margin:0 auto;padding:26px 32px;
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:13px;letter-spacing:.12em;color:var(--grey);
+  }
+  .topbar .brand{color:var(--pine);font-weight:bold;letter-spacing:.2em;}
+  .topbar .brand span{color:var(--dawn);}
+
+  /* ---------- hero ---------- */
+  header{
+    max-width:920px;margin:0 auto;padding:64px 32px 72px;
+    position:relative;
+  }
+  header .kicker{
+    font-size:12px;letter-spacing:.45em;color:var(--dawn);
+    margin-bottom:26px;
+  }
+  header h1{
+    font-family:'Songti SC','Noto Serif SC','SimSun',serif;
+    font-size:clamp(38px,7vw,64px);font-weight:bold;line-height:1.3;
+    color:var(--pine-deep);
+  }
+  header h1 em{font-style:normal;color:var(--dawn);}
+  header .sub{
+    margin-top:26px;max-width:560px;
+    font-size:16px;color:#5c6156;line-height:2;
+  }
+  header .readout{
+    margin-top:36px;font-size:13px;color:var(--grey);
+    display:flex;gap:28px;flex-wrap:wrap;
+  }
+  header .readout b{color:var(--pine);font-weight:normal;}
+
+  /* ---------- contour divider ---------- */
+  .contour{
+    height:110px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='920' height='110' viewBox='0 0 920 110'%3E%3Cg fill='none' stroke='%232f4a3c' stroke-opacity='.14' stroke-width='1'%3E%3Cpath d='M-20,95 C150,60 300,105 470,75 C640,45 780,95 940,65'/%3E%3Cpath d='M-20,75 C150,40 300,85 470,55 C640,25 780,75 940,45'/%3E%3Cpath d='M-20,55 C150,20 300,65 470,35 C640,5 780,55 940,25'/%3E%3Cpath d='M-20,110 C150,80 300,120 470,95 C640,65 780,110 940,85'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat:repeat-x;background-size:920px 110px;
+  }
+
+  /* ---------- two streams ---------- */
+  .streams{
+    max-width:920px;margin:0 auto;padding:56px 32px 20px;
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  }
+  .stream{
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:34px 32px;position:relative;
+  }
+  .stream .mark{
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;margin-bottom:16px;
+  }
+  .stream.trail .mark{background:rgba(47,74,60,.1);color:var(--pine);}
+  .stream.signal .mark{background:rgba(217,123,41,.12);color:var(--dawn);}
+  .stream h3{
+    font-family:'Songti SC','Noto Serif SC',serif;
+    font-size:22px;font-weight:bold;color:var(--pine-deep);
+  }
+  .stream h3 small{
+    display:block;margin-top:2px;
+    font-family:'SF Mono','Consolas',monospace;font-size:11px;
+    letter-spacing:.3em;color:var(--grey);font-weight:normal;
+  }
+  .stream p{margin-top:12px;font-size:14px;color:#5c6156;line-height:1.9;}
+  @media(max-width:680px){.streams{grid-template-columns:1fr;}}
+
+  /* ---------- timeline ---------- */
+  .timeline{max-width:920px;margin:0 auto;padding:56px 32px 30px;}
+  .timeline h2{
+    font-size:13px;letter-spacing:.4em;color:var(--grey);
+    font-weight:normal;margin-bottom:40px;
+  }
+  .rail{border-left:2px solid var(--line);padding-left:0;}
+  .stop{
+    position:relative;display:grid;grid-template-columns:96px 1fr;
+    gap:24px;padding:0 0 40px 34px;
+  }
+  .stop::before{
+    content:'';position:absolute;left:-7px;top:8px;
+    width:12px;height:12px;border-radius:50%;
+    background:var(--paper);border:2px solid var(--pine);
+  }
+  .stop.dawn::before{border-color:var(--dawn);}
+  .stop .when{
+    font-family:'SF Mono','Consolas',monospace;
+    font-size:12.5px;color:var(--grey);padding-top:3px;letter-spacing:.05em;
+  }
+  .stop a.card{
+    display:block;text-decoration:none;color:inherit;
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:24px 28px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .stop a.card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(34,56,45,.1);}
+  .stop .tag{
+    font-size:11px;letter-spacing:.25em;margin-bottom:8px;
+  }
+  .stop .tag.pine{color:var(--pine);}
+  .stop .tag.dawn{color:var(--dawn);}
+  .stop h4{
+    font-family:'Songti SC','Noto Serif SC',serif;
+    font-size:19px;font-weight:bold;line-height:1.5;color:var(--pine-deep);
+  }
+  .stop .desc{margin-top:6px;font-size:13.5px;color:#6a6f64;line-height:1.8;}
+  .stop .data{
+    margin-top:12px;font-family:'SF Mono','Consolas',monospace;
+    font-size:12px;color:var(--grey);letter-spacing:.04em;
+  }
+  .stop .data b{color:var(--pine);font-weight:normal;}
+  @media(max-width:640px){.stop{grid-template-columns:1fr;gap:6px;}}
+
+  /* ---------- signals empty state ---------- */
+  .signal-empty{
+    border:1px dashed var(--line);border-radius:8px;
+    padding:24px 28px;color:var(--grey);font-size:13.5px;
+    background:transparent;
+  }
+  .signal-empty b{color:var(--dawn);font-weight:normal;}
+
+  /* ---------- about ---------- */
+  .about{
+    max-width:920px;margin:20px auto 0;padding:48px 32px 80px;
+    border-top:1px solid var(--line);
+  }
+  .about .name{
+    font-size:12px;letter-spacing:.35em;color:var(--grey);margin-bottom:20px;
+  }
+  .about p{
+    font-family:'Songti SC','Noto Serif SC',serif;
+    font-size:17px;color:#41473f;max-width:620px;line-height:2.1;
+  }
+  footer{
+    background:var(--pine-deep);color:#7d9684;
+    text-align:center;padding:34px 24px;
+    font-size:12.5px;letter-spacing:.15em;
+  }
+  footer .motto-f{color:#c3d2bd;margin-bottom:8px;font-size:14px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">MOSS <span>&amp;</span> MILES</div>
+  <div class="mono">mossmiles.hk · HK</div>
+</div>
+
+<header>
+  <div class="kicker">TRAIL NOTES &amp; SIGNALS · 山径与信号</div>
+  <h1 class="serif">在山径上记录，<br>在时代里<em>思考</em>。</h1>
+  <p class="sub">行山的记录、发现与体会；AI 时代的观察与思考。路是一步一步走的，想法是一篇一篇写的。</p>
+  <div class="readout mono">
+    <span>文章 <b>06</b></span>
+    <span>行山 <b>02</b></span>
+    <span>最近更新 <b>2025-11</b></span>
+  </div>
+</header>
+
+<div class="contour"></div>
+
+<section class="streams">
+  <div class="stream trail">
+    <div class="mark">⛰</div>
+    <h3>山径<small>TRAIL NOTES</small></h3>
+    <p>行山的记录、发现与体会。距离、爬升、用时是骨架，路上的一株苔藓、一阵风沙才是血肉。</p>
+  </div>
+  <div class="stream signal">
+    <div class="mark">⚑</div>
+    <h3>信号<small>SIGNALS</small></h3>
+    <p>AI 时代的思考。技术呼啸而过的时代，慢慢写、想清楚，从山路上寄出的一封封信。</p>
+  </div>
+</section>
+
+<section class="timeline">
+  <h2>路标 · MILESTONES</h2>
+
+  <div class="rail">
+
+    <div class="stop dawn">
+      <div class="when">2025-10</div>
+      <a class="card" href="gobi20.html">
+        <div class="tag pine">山径 · 戈壁 A 队</div>
+        <h4>戈壁20随笔：见天，见地，见众生</h4>
+        <div class="desc">二刷戈壁，首征 A 队。三天全力冲刺，沙克尔顿奖与奋进奖入账——风沙、胡杨和并肩的人，都是戈壁给的答案。</div>
+        <div class="data">备战 <b>6 个月</b> · 月均 <b>200+ km</b> · 冲刺 <b>3 天</b></div>
+      </a>
+    </div>
+
+    <div class="stop">
+      <div class="when">2025-10</div>
+      <a class="card" href="moss.html">
+        <div class="tag pine">山径 · 发现</div>
+        <h4>苔藓观察日记：银湖山的小绿世界</h4>
+        <div class="desc">银湖山道上的一块石头，和花盆里不请自来的苔藓。脚踝高度的地方，有一个完整的世界在生长。</div>
+        <div class="data">银湖山 · 阳台花盆</div>
+      </a>
+    </div>
+
+    <div class="stop">
+      <div class="when">草木集</div>
+      <a class="card" href="poetry.html">
+        <div class="tag pine">发现 · 古诗卷</div>
+        <h4>唐宋诗词中的青苔</h4>
+        <div class="desc">从王维「复照青苔上」到刘禹锡「百亩庭中半是苔」——唐宋苔诗代表作，附作者、原文、背景与心境。</div>
+      </a>
+    </div>
+
+    <div class="stop">
+      <div class="when">草木集</div>
+      <a class="card" href="haiku.html">
+        <div class="tag pine">发现 · 俳句</div>
+        <h4>从日本俳句观察青苔</h4>
+        <div class="desc">世界上最短的诗，与最安静的植物。芭蕉的蝉声渗入岩石——侘寂精神的终极载体。</div>
+      </a>
+    </div>
+
+    <div class="stop">
+      <div class="when">手记</div>
+      <a class="card" href="north-moss.html">
+        <div class="tag pine">发现 · 养苔手记</div>
+        <h4>北方养苔藓，确实有点难</h4>
+        <div class="desc">湿度、光照、浇水、土壤——在北方干燥的室内养活一盆青苔，是一场与环境的漫长谈判。</div>
+      </a>
+    </div>
+
+    <div class="stop dawn">
+      <div class="when">待写</div>
+      <div class="signal-empty">
+        <b>信号 · Signals</b> 第一封信正在路上——关于 AI 时代，我们如何走路、如何思考。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+  <div class="name">ABOUT · 关于</div>
+  <p class="serif">苔藓是显微镜，照见脚下的一寸世界；行山是望远镜，通向远处的地平线。这里记录一个人走向未来的脚印——也愿为 AI 时代里感到迷茫的人，点一盏小灯。</p>
+</section>
+
+<footer>
+  <div class="motto-f serif">在山径上记录，在时代里思考。</div>
+  MOSS &amp; MILES · WRITTEN SLOWLY, UPDATED CONTINUOUSLY
+</footer>
+
+</body>
+</html>
