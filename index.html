@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moss &amp; Miles — Run long distances. Notice small things.</title>
-<meta name="description" content="A runner's field notes. Moss is the microscope; miles lead to the distance. Recording one person's exploration of the road ahead — a small lamp for those feeling lost in the age of AI.">
+<meta name="description" content="Field notes across four lenses: macro ecology, the micro world, investment notes, and nature & humanities. Moss is the microscope; miles lead to the distance.">
 <style>
   :root{
     --moss-deep:#1e3a24;
@@ -13,6 +13,7 @@
     --moss-pale:#e9f2e3;
     --sand:#9a6b2f;
     --sand-light:#d9b380;
+    --bronze:#b08d57;
     --ink:#26312a;
     --paper:#f7f8f3;
     --grey:#75806f;
@@ -56,28 +57,56 @@
     font-family:'Segoe UI',sans-serif;font-size:11px;letter-spacing:.35em;
     color:#93a789;
   }
-  /* ---------- two lenses ---------- */
-  .lenses{
+  /* ---------- four categories ---------- */
+  .cats{
     max-width:880px;margin:0 auto;padding:88px 32px 30px;
     display:grid;grid-template-columns:1fr 1fr;gap:28px;
   }
-  .lens{
+  .cat{
+    display:block;text-decoration:none;color:inherit;
     border:1px solid #dfe6d6;border-radius:10px;
     padding:38px 34px;background:#fff;
+    transition:transform .25s ease, box-shadow .25s ease;
   }
-  .lens .icon{font-size:30px;}
-  .lens h3{margin:14px 0 10px;font-size:22px;font-weight:normal;}
-  .lens.m h3{color:var(--moss);}
-  .lens.mi h3{color:var(--sand);}
-  .lens p{font-size:15px;color:#5a6557;line-height:1.9;}
-  @media(max-width:680px){.lenses{grid-template-columns:1fr;}}
+  .cat:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(30,58,36,.14);}
+  .cat .icon{font-size:30px;}
+  .cat h3{margin:14px 0 4px;font-size:22px;font-weight:normal;}
+  .cat.macro h3{color:var(--sand);}
+  .cat.micro h3{color:var(--moss);}
+  .cat.invest h3{color:var(--moss-deep);}
+  .cat.hum h3{color:var(--bronze);}
+  .cat .cn-sub{
+    font-family:'Songti SC','Noto Serif SC',serif;
+    font-size:14px;letter-spacing:.3em;color:#9aa294;margin-bottom:12px;
+  }
+  .cat p{font-size:15px;color:#5a6557;line-height:1.9;}
+  .cat .map{
+    margin-top:12px;font-size:13px;font-style:italic;
+    color:#8a9384;border-top:1px dashed #dfe6d6;padding-top:12px;
+  }
+  @media(max-width:680px){.cats{grid-template-columns:1fr;}}
   /* ---------- essays ---------- */
   .essays{max-width:880px;margin:0 auto;padding:60px 32px 30px;}
-  .essays h2{
+  .essays > h2{
     font-weight:normal;font-size:15px;letter-spacing:.4em;
     color:var(--grey);font-family:'Segoe UI',sans-serif;
     text-transform:uppercase;margin-bottom:36px;
   }
+  .group-label{
+    display:flex;align-items:center;gap:16px;
+    margin:48px 0 24px;
+  }
+  .group-label:first-of-type{margin-top:0;}
+  .group-label .g-name{font-size:18px;font-weight:normal;white-space:nowrap;}
+  .group-label .g-cn{
+    font-family:'Songti SC','Noto Serif SC',serif;
+    font-size:13px;letter-spacing:.25em;color:#9aa294;white-space:nowrap;
+  }
+  .group-label::after{content:"";flex:1;height:1px;background:#dfe6d6;}
+  .group-label.macro .g-name{color:var(--sand);}
+  .group-label.micro .g-name{color:var(--moss);}
+  .group-label.invest .g-name{color:var(--moss-deep);}
+  .group-label.hum .g-name{color:var(--bronze);}
   .card{
     display:grid;grid-template-columns:220px 1fr;
     border-radius:10px;overflow:hidden;background:#fff;
@@ -92,11 +121,23 @@
     font-family:'Segoe UI',sans-serif;font-size:11px;
     letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px;
   }
-  .card .tag.green{color:var(--moss);}
   .card .tag.gold{color:var(--sand);}
+  .card .tag.green{color:var(--moss);}
+  .card .tag.deep{color:var(--moss-deep);}
+  .card .tag.bronze{color:var(--bronze);}
   .card h3{font-size:22px;font-weight:normal;line-height:1.4;margin-bottom:8px;}
   .card .desc{font-size:14px;color:#67725f;line-height:1.8;}
   .card .meta{margin-top:14px;font-size:12px;color:#9aa294;font-family:'Segoe UI',sans-serif;letter-spacing:.06em;}
+  .card.soon{
+    cursor:default;background:#fbfcf8;
+    border:1px dashed #d5e0cd;box-shadow:none;
+  }
+  .card.soon:hover{transform:none;box-shadow:none;}
+  .card.soon .thumb{
+    background:linear-gradient(140deg,#eef3e6,#e9f2e3);
+    display:flex;align-items:center;justify-content:center;
+    font-size:38px;color:var(--moss-light);
+  }
   @media(max-width:640px){.card{grid-template-columns:1fr;}.card .thumb{min-height:200px;}}
   /* ---------- about ---------- */
   .about{
@@ -107,7 +148,8 @@
     font-family:'Segoe UI',sans-serif;font-size:13px;letter-spacing:.35em;
     text-transform:uppercase;color:var(--grey);margin-bottom:24px;
   }
-  .about p{font-size:17px;color:#3c463c;max-width:640px;line-height:2;}
+  .about p{font-size:17px;color:#3c463c;max-width:680px;line-height:2;}
+  .about p + p{margin-top:1.2em;}
   footer{
     background:var(--moss-deep);color:#8fa687;
     text-align:center;padding:36px 24px;
@@ -120,7 +162,7 @@
 
 <header>
   <div class="inner">
-    <div class="kicker">A Runner's Field Notes</div>
+    <div class="kicker">Field Notes · Four Lenses</div>
     <h1>Moss <span class="amp">&amp;</span> Miles</h1>
     <div class="cn">苔 径</div>
     <p class="motto">Run long distances. Notice small things.</p>
@@ -128,46 +170,92 @@
   <div class="scroll">SCROLL ↓</div>
 </header>
 
-<section class="lenses">
-  <div class="lens m">
+<section class="cats">
+  <a class="cat macro" href="#macro">
+    <div class="icon">🏜️</div>
+    <h3>Macro Ecology</h3>
+    <div class="cn-sub">宏 观 生 态</div>
+    <p>Large-scale environments and communities — the extreme ecology of the Gobi, trail-side observation along the hills of Yinhu Mountain and Hong Kong.</p>
+    <div class="map">→ The same lens reads political, economic and business ecosystems.</div>
+  </a>
+  <a class="cat micro" href="#micro">
     <div class="icon">🔬</div>
-    <h3>Moss · The Microscope</h3>
-    <p>Kneel down and look at one square inch of world. Moss, dew, sporophytes — a complete universe hides in small things, and with it, the answer to "where am I right now."</p>
-  </div>
-  <div class="lens mi">
-    <div class="icon">🏃</div>
-    <h3>Miles · The Distance</h3>
-    <p>Run far. Four hundred hours, 28.7 kilometres, one Gobi crossing — running the question "where am I going" into an answer, one step at a time. The lighthouse is not elsewhere; it is on the road already walked.</p>
-  </div>
+    <h3>Micro World</h3>
+    <div class="cn-sub">微 观 世 界</div>
+    <p>Details and individual species — moss diaries, macro photography, morphology and anatomy. A complete universe hides in one square inch.</p>
+    <div class="map">→ The granularity lens for companies and industries.</div>
+  </a>
+  <a class="cat invest" href="#invest">
+    <div class="icon">📈</div>
+    <h3>Investment Notes</h3>
+    <div class="cn-sub">投 资 笔 记</div>
+    <p>The academic, practical column — reading notes on papers, literature reviews, reflections on research methods.</p>
+    <div class="map">→ Where observation becomes judgment, and judgment becomes practice.</div>
+  </a>
+  <a class="cat hum" href="#hum">
+    <div class="icon">🎻</div>
+    <h3>Nature &amp; Humanities</h3>
+    <div class="cn-sub">自 然 与 人 文</div>
+    <p>Violin at the Boston Music Festival, Japanese haiku, Tang-Song poetry, nature and history — how human culture distills the turning of seasons.</p>
+    <div class="map">→ A resting place for the soul; the liberal arts behind the lens.</div>
+  </a>
 </section>
 
 <section class="essays">
   <h2>Field Notes</h2>
 
+  <div class="group-label macro" id="macro"><span class="g-name">Macro Ecology</span><span class="g-cn">宏观生态</span></div>
+
   <a class="card" href="gobi20.html">
     <div class="thumb" style="background-image:url('images/gobi20-finish.jpeg');"></div>
     <div class="body">
-      <div class="tag gold">Miles · Ultra Gobi 戈20 A队</div>
+      <div class="tag gold">Macro Ecology · Ultra Gobi 戈20 A队</div>
       <h3>戈壁20随笔：见天，见地，见众生</h3>
-      <div class="desc">二刷戈壁，首征 A 队。半年备战、月均两百公里，三天全力冲刺，沙克尔顿奖与奋进奖入账——风沙、胡杨和并肩的人，都是戈壁给的答案。</div>
+      <div class="desc">二刷戈壁，首征 A 队。半年备战、月均两百公里，三天全力冲刺——风沙、胡杨和并肩的人，极端环境下的生命力与群落，都是戈壁给的答案。</div>
       <div class="meta">Oct 2025 · 写于西宁 ZH9236 航班</div>
     </div>
   </a>
 
+  <div class="group-label micro" id="micro"><span class="g-name">Micro World</span><span class="g-cn">微观世界</span></div>
+
   <a class="card" href="moss.html">
     <div class="thumb" style="background-image:url('images/pot-sporophytes.jpg');"></div>
     <div class="body">
-      <div class="tag green">Moss · Micro World</div>
+      <div class="tag green">Micro World · Moss Notes</div>
       <h3>Moss Notes: A Small Green World</h3>
       <div class="desc">A boulder on the Yinhu Mountain trail, and the uninvited moss in my flowerpots. There is a whole world thriving at ankle height, indifferent to being noticed.</div>
       <div class="meta">Yinhu Mountain &amp; home balcony</div>
     </div>
   </a>
 
+  <a class="card" href="north-moss.html">
+    <div class="thumb" style="background-image:url('images/pot-roots.jpg');"></div>
+    <div class="body">
+      <div class="tag green">Micro World · 养苔手记</div>
+      <h3>北方养苔藓，确实有点难</h3>
+      <div class="desc">湿度 70% 以上、忌强光、忌自来水。在北方干燥的室内养活一盆青苔，是一场与环境的漫长谈判——土壤、光照、浇水、湿度四点心得。</div>
+      <div class="meta">Indoor moss keeping · Beijing</div>
+    </div>
+  </a>
+
+  <div class="group-label invest" id="invest"><span class="g-name">Investment Notes</span><span class="g-cn">投资笔记</span></div>
+
+  <div class="card soon">
+    <div class="thumb">✎</div>
+    <div class="body">
+      <div class="tag deep">Investment Notes · Coming Soon</div>
+      <h3>论文阅读笔记 · 筹备中</h3>
+      <div class="desc">这个栏目将发布论文阅读笔记、文献综述与研究方法反思——从宏观生态到微观世界，把观察沉淀为判断。第一篇正在路上。</div>
+      <div class="meta">Papers · Literature Reviews · Methods</div>
+    </div>
+  </div>
+
+  <div class="group-label hum" id="hum"><span class="g-name">Nature &amp; Humanities</span><span class="g-cn">自然与人文</span></div>
+
   <a class="card" href="poetry.html">
     <div class="thumb" style="background-image:url('images/pot-carpet.jpg');"></div>
     <div class="body">
-      <div class="tag green">Moss · Poetry 诗苔</div>
+      <div class="tag bronze">Nature &amp; Humanities · 诗苔</div>
       <h3>唐宋诗词中的青苔</h3>
       <div class="desc">从王维「复照青苔上」到刘禹锡「百亩庭中半是苔」——收录唐宋苔诗代表作，附作者、原文、背景与心境，异文均经文献核对。</div>
       <div class="meta">Tang &amp; Song Dynasties · 古诗卷</div>
@@ -177,27 +265,18 @@
   <a class="card" href="haiku.html">
     <div class="thumb" style="background-image:url('images/yinhu-trail.jpg');"></div>
     <div class="body">
-      <div class="tag green">Moss · Haiku 俳句之苔</div>
+      <div class="tag bronze">Nature &amp; Humanities · 俳句之苔</div>
       <h3>從日本俳句观察青苔</h3>
-      <div class="desc">世界上最短的诗，与最安静的植物。芭蕉的蝉声渗入岩石，冬月照着相依着苔的磐石——侘寂精神的终极载体。</div>
+      <div class="desc">世界上最短的诗，与最安静的植物。芭蕉的蝉声渗入岩石，冬月照着相依着苔的磐石——人类文学如何凝练自然季节的更迭。</div>
       <div class="meta">Bashō · Buson · Issa</div>
-    </div>
-  </a>
-
-  <a class="card" href="north-moss.html">
-    <div class="thumb" style="background-image:url('images/pot-roots.jpg');"></div>
-    <div class="body">
-      <div class="tag green">Moss · Keeping Notes 养苔手记</div>
-      <h3>北方养苔藓，确实有点难</h3>
-      <div class="desc">湿度 70% 以上、忌强光、忌自来水。在北方干燥的室内养活一盆青苔，是一场与环境的漫长谈判——土壤、光照、浇水、湿度四点心得。</div>
-      <div class="meta">Indoor moss keeping · Beijing</div>
     </div>
   </a>
 </section>
 
 <section class="about">
   <div class="name">About</div>
-  <p>Moss is the microscope, revealing what lies beneath my feet; Miles lead toward the distance, and the trail between them is the process of thinking and exploring. This site records one person's footprints on the road to the future — and may it light a small lamp for those feeling lost in the age of AI.</p>
+  <p>Moss is the microscope; miles lead to the distance. This site keeps four kinds of field notes: the macro ecology of deserts and trails, the micro world of moss and morphology, investment notes where observation becomes judgment, and the nature &amp; humanities shelf where music and poetry live.</p>
+  <p>Ecology and investing share one discipline: read the system at every scale, then be patient. These notes record one person's footprints on the road to the future — and may they light a small lamp for those feeling lost in the age of AI.</p>
 </section>
 
 <footer>
