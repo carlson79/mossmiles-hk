@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>唐宋诗词中的青苔 — Moss &amp; Miles 苔径</title>
+<style>
+  :root{
+    --moss-deep:#1e3a24;
+    --moss:#3e6b3f;
+    --moss-light:#7fa86b;
+    --moss-pale:#e9f2e3;
+    --ink:#26312a;
+    --paper:#f7f9f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Songti SC','Noto Serif SC','STSong',serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:2;
+  }
+  /* ---------- hero ---------- */
+  header{
+    position:relative;min-height:62vh;
+    display:flex;align-items:flex-end;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 78% 18%, rgba(217,179,128,.16), transparent 50%),
+      radial-gradient(ellipse at 18% 82%, rgba(127,168,107,.18), transparent 55%),
+      linear-gradient(160deg,#15291a 0%,#1e3a24 60%,#241f15 100%);
+  }
+  header .title{
+    position:relative;max-width:760px;margin:0 auto;
+    padding:0 28px 72px;color:#f2f7ec;
+  }
+  header .kicker{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:12px;letter-spacing:.35em;text-transform:uppercase;
+    color:#b8d4a8;margin-bottom:18px;
+  }
+  header h1{font-size:clamp(32px,5.5vw,54px);font-weight:normal;line-height:1.3;letter-spacing:.05em;}
+  header .sub{margin-top:16px;font-style:italic;color:#cfe3c2;font-size:17px;}
+  /* ---------- article ---------- */
+  main{max-width:760px;margin:0 auto;padding:72px 28px 40px;}
+  main > p, .poem > p{margin-bottom:1.6em;font-size:18px;text-align:justify;}
+  .lead::first-letter{
+    font-size:3.2em;float:left;line-height:.9;
+    padding:8px 12px 0 0;color:var(--moss);
+  }
+  /* ---------- dynasty heading ---------- */
+  .dynasty{
+    margin:64px 0 40px;text-align:center;
+  }
+  .dynasty .char{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:52px;height:52px;border:1px solid var(--moss-light);
+    border-radius:50%;color:var(--moss);font-size:24px;
+  }
+  .dynasty .label{
+    margin-top:10px;font-family:'Segoe UI',sans-serif;
+    font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#75806f;
+  }
+  /* ---------- poem entry ---------- */
+  .poem{
+    margin-bottom:56px;padding-bottom:48px;
+    border-bottom:1px solid #d5e0cd;
+  }
+  .poem:last-of-type{border-bottom:none;}
+  .poem h2{font-size:24px;font-weight:normal;color:var(--moss-deep);margin-bottom:4px;letter-spacing:.03em;}
+  .poem .poet{font-size:14px;color:#75806f;margin-bottom:26px;letter-spacing:.1em;}
+  .verse{
+    margin:0 0 26px;padding:20px 0 20px 28px;
+    border-left:3px solid var(--moss-light);
+    font-size:19px;line-height:2.1;color:var(--moss-deep);
+  }
+  .meta-item{margin-bottom:.9em;font-size:15.5px;line-height:2;color:#3c463c;text-align:justify;}
+  .meta-item b{
+    color:var(--moss);font-weight:600;
+    font-size:14px;letter-spacing:.15em;margin-right:8px;
+  }
+  /* ---------- mood table ---------- */
+  table{width:100%;border-collapse:collapse;margin:36px 0;font-size:15px;}
+  th{
+    font-family:'Segoe UI',sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:.15em;text-transform:uppercase;color:#75806f;
+    text-align:left;padding:10px 12px;border-bottom:2px solid var(--moss-light);
+  }
+  td{padding:12px;border-bottom:1px solid #e2e9da;vertical-align:top;line-height:1.9;}
+  td:first-child{color:var(--moss);white-space:nowrap;}
+  .src{font-size:14px;color:#75806f;line-height:2;}
+  .src li{margin-bottom:4px;}
+  /* ---------- footer ---------- */
+  footer{max-width:760px;margin:0 auto;padding:24px 28px 80px;}
+  .sig{
+    border-top:1px solid #d5e0cd;padding-top:28px;
+    font-style:italic;color:#6b7a6d;font-size:15px;
+  }
+</style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:10;padding:16px 28px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:.1em;background:linear-gradient(to bottom, rgba(10,20,12,.55), transparent);"><a href="index.html" style="color:#e6f0dd;text-decoration:none;">← Moss &amp; Miles</a></nav>
+
+<header>
+  <div class="title">
+    <div class="kicker">Moss in Poetry · 诗苔</div>
+    <h1>唐宋诗词中的青苔</h1>
+    <div class="sub">苔痕上阶绿，草色入帘青——青苔是古人笔下「静」与「久」的信物</div>
+  </div>
+</header>
+
+<main>
+
+  <p class="lead">青苔长在无人处，替时间作证。古人爱苔、怜苔，从南朝江淹的「百年积流水，千岁生青苔」，到沈约《咏青苔诗》的「缘阶已漠漠，泛水复绵绵」，青苔早已进入诗的传统。本文收录唐宋诗词中与青苔相关的代表作，注明作者、原文、写作背景与心境；原文均以古诗文网、汉典《全唐诗》等公开文献核对，异文处加以注明。</p>
+
+  <div class="dynasty">
+    <span class="char">唐</span>
+    <div class="label">Tang Dynasty</div>
+  </div>
+
+  <div class="poem">
+    <h2>鹿柴</h2>
+    <div class="poet">王维（701–761）· 盛唐</div>
+    <div class="verse">空山不见人，但闻人语响。<br>返景入深林，复照青苔上。</div>
+    <p class="meta-item"><b>背景</b>《辋川集》二十首之五。王维中年以后在蓝田营建辋川别业，半官半隐，与友人裴迪逐处题咏，此写辋川二十景之一「鹿柴」。</p>
+    <p class="meta-item"><b>心境</b>夕阳斜光穿入深林，恰好落在青苔之上——青苔生在不见人迹处，返景是它唯一的访客。以光写静，以苔写幽，青苔在此是清净道场的地毯。</p>
+  </div>
+
+  <div class="poem">
+    <h2>书事</h2>
+    <div class="poet">王维 · 盛唐</div>
+    <div class="verse">轻阴阁小雨，深院昼慵开。<br>坐看苍苔色，欲上人衣来。</div>
+    <p class="meta-item"><b>背景</b>即事咏怀的五绝，写雨后深院独坐之景，具体系年无考。</p>
+    <p class="meta-item"><b>心境</b>静坐看苔，看得久了，竟觉得那一片苍绿要漫上衣衫。「欲上人衣来」让青苔由静物变为有情之物，物我两忘。</p>
+  </div>
+
+  <div class="poem">
+    <h2>长干行·其一（节选）</h2>
+    <div class="poet">李白（701–762）· 盛唐</div>
+    <div class="verse">门前迟行迹，一一生绿苔。<br>苔深不能扫，落叶秋风早。</div>
+    <p class="meta-item"><b>背景</b>约作于开元十四年（726）前后，李白初游金陵时。长干为古金陵里巷名，在今南京秦淮河南。诗以商妇口吻自述与丈夫青梅竹马、婚后离别之苦。</p>
+    <p class="meta-item"><b>心境</b>丈夫远行前在门前徘徊的足迹，如今一一长满绿苔；苔深到不忍扫——扫了苔，连最后一点行迹也没了。青苔是时间的刻度：苔有多厚，离别就有多久。（句中「迟行迹」一作「旧行迹」。）</p>
+  </div>
+
+  <div class="poem">
+    <h2>寻南溪常山道人隐居</h2>
+    <div class="poet">刘长卿（约726–789后）· 中唐</div>
+    <div class="verse">一路经行处，莓苔见履痕。<br>白云依静渚，春草闭闲门。<br>过雨看松色，随山到水源。<br>溪花与禅意，相对亦忘言。</div>
+    <p class="meta-item"><b>背景</b>约作于大历年间。诗人入南溪山寻访常山道人而不遇，沿途所见皆成诗料。「莓苔」一作「苍苔」，「履痕」一作「屐痕」。</p>
+    <p class="meta-item"><b>心境</b>莓苔小径上的屐痕，说明此地人迹罕至——苔径即隐者之风标。寻而不遇，却于溪花相对间悟得禅意。</p>
+  </div>
+
+  <div class="poem">
+    <h2>题扬州禅智寺</h2>
+    <div class="poet">杜牧（803–约852）· 晚唐</div>
+    <div class="verse">雨过一蝉噪，飘萧松桂秋。<br>青苔满阶砌，白鸟故迟留。<br>暮霭生深树，斜阳下小楼。<br>谁知竹西路，歌吹是扬州。</div>
+    <p class="meta-item"><b>背景</b>作于开成二年（837）秋。杜牧之弟杜顗患眼病寄居扬州禅智寺，杜牧自洛阳携眼医赴扬州探视。禅智寺在扬州蜀冈，本为隋炀帝故宫。</p>
+    <p class="meta-item"><b>心境</b>台阶长满青苔，写尽寺之空寂；一边是满阶青苔的冷寂禅房，一边是歌吹沸天的繁华扬州——忧弟之病、伤己前程的黯然，都压在这满砌青苔之下。</p>
+  </div>
+
+  <div class="poem">
+    <h2>再游玄都观</h2>
+    <div class="poet">刘禹锡（772–842）· 中唐</div>
+    <div class="verse">百亩庭中半是苔，桃花净尽菜花开。<br>种桃道士归何处，前度刘郎今又来。</div>
+    <p class="meta-item"><b>背景</b>作于大和二年（828）三月，有自序。十四年前刘禹锡因「玄都观里桃千树，尽是刘郎去后栽」讥刺新贵被贬远州；十四年后被召回长安，重游玄都观，见桃树荡然无存，唯余青苔菜花，遂再题此诗。</p>
+    <p class="meta-item"><b>心境</b>百亩庭院一半生了青苔——当年炙手可热的权贵与他们的桃树一起消失，而被贬的「刘郎」又回来了。青苔是繁华落尽后的占领者，也是诗人硬骨的反讽注脚。</p>
+  </div>
+
+  <div class="poem">
+    <h2>山中五绝句·石上苔</h2>
+    <div class="poet">白居易（772–846）· 中唐</div>
+    <div class="verse">漠漠斑斑石上苔，幽芳静绿绝纤埃。<br>路傍凡草荣遭遇，曾得七香车辗来。</div>
+    <p class="meta-item"><b>背景</b>收于《全唐诗》，为《山中五绝句》之一，咏山中石上苔藓，具体系年不详。</p>
+    <p class="meta-item"><b>心境</b>石上青苔幽静芳洁、纤尘不染，却不如路边凡草「际遇」好——凡草尚有华贵的七香车碾过。以苔自况，叹幽人高士无人识的不平。</p>
+  </div>
+
+  <div class="poem">
+    <h2>陋室铭（附 · 铭文）</h2>
+    <div class="poet">刘禹锡 · 中唐</div>
+    <div class="verse">苔痕上阶绿，草色入帘青。</div>
+    <p class="meta-item"><b>说明</b>虽为铭文而非诗，却是中文世界里最著名的苔句。作于刘禹锡贬居和州期间，借陋室明志——苔痕草色，恰是「惟吾德馨」的居住环境。</p>
+  </div>
+
+  <div class="dynasty">
+    <span class="char">宋</span>
+    <div class="label">Song Dynasty</div>
+  </div>
+
+  <div class="poem">
+    <h2>游园不值</h2>
+    <div class="poet">叶绍翁 · 南宋</div>
+    <div class="verse">应怜屐齿印苍苔，小扣柴扉久不开。<br>春色满园关不住，一枝红杏出墙来。</div>
+    <p class="meta-item"><b>背景</b>春日访友游园不遇之作，具体创作时间难以确证。叶绍翁字嗣宗，号靖逸，江湖诗派。</p>
+    <p class="meta-item"><b>心境</b>猜想园主爱惜青苔、怕屐齿踩坏，才久不开门——「怜」字双关，主人怜苔，苔亦见证主人的清高。而春色终究关不住：青苔守护的幽静小园，锁不住蓬勃生机。</p>
+  </div>
+
+  <div class="poem">
+    <h2>书湖阴先生壁·其一</h2>
+    <div class="poet">王安石（1021–1086）· 北宋</div>
+    <div class="verse">茅檐长扫净无苔，花木成畦手自栽。<br>一水护田将绿绕，两山排闼送青来。</div>
+    <p class="meta-item"><b>背景</b>题写在友人杨德逢（号湖阴先生）家屋壁上的组诗。王安石晚年退居金陵钟山脚下的半山园，杨德逢是其邻居，诗约作于元丰前期。</p>
+    <p class="meta-item"><b>心境</b>别家咏苔皆取其幽，王安石偏写「无苔」——庭院常扫，净无苔痕，花木皆主人手栽。以无苔写主人的勤劳高洁，是苔诗中的别调。</p>
+  </div>
+
+  <h2 style="font-size:20px;font-weight:normal;color:var(--moss-deep);margin:56px 0 8px;">小结：青苔的几种心境</h2>
+  <table>
+    <tr><th>心境</th><th>代表句</th><th>出处</th></tr>
+    <tr><td>空寂禅意</td><td>返景入深林，复照青苔上</td><td>王维《鹿柴》</td></tr>
+    <tr><td>物我相亲</td><td>坐看苍苔色，欲上人衣来</td><td>王维《书事》</td></tr>
+    <tr><td>离别之久</td><td>门前迟行迹，一一生绿苔</td><td>李白《长干行》</td></tr>
+    <tr><td>幽人踪迹</td><td>一路经行处，莓苔见履痕</td><td>刘长卿《寻南溪常山道人隐居》</td></tr>
+    <tr><td>冷落孤清</td><td>青苔满阶砌，白鸟故迟留</td><td>杜牧《题扬州禅智寺》</td></tr>
+    <tr><td>沧桑反讽</td><td>百亩庭中半是苔</td><td>刘禹锡《再游玄都观》</td></tr>
+    <tr><td>高洁不遇</td><td>漠漠斑斑石上苔，幽芳静绿绝纤埃</td><td>白居易《石上苔》</td></tr>
+    <tr><td>安贫乐道</td><td>苔痕上阶绿，草色入帘青</td><td>刘禹锡《陋室铭》</td></tr>
+    <tr><td>惜苔之幽</td><td>应怜屐齿印苍苔</td><td>叶绍翁《游园不值》</td></tr>
+    <tr><td>无苔之洁</td><td>茅檐长扫净无苔</td><td>王安石《书湖阴先生壁》</td></tr>
+  </table>
+
+  <p class="src" style="margin-top:40px"><b style="color:var(--moss)">出处与核对：</b></p>
+  <ul class="src" style="padding-left:1.4em">
+    <li>古诗文网（gushiwen.cn）：各诗原文、注释、创作背景</li>
+    <li>汉典诗词（sc.zdic.net）：据《全唐诗》核对白居易《石上苔》、杜牧《题扬州禅智寺》等</li>
+    <li>百度百科：相关诗作词条（背景系年）</li>
+    <li>个别诗句存在异文（如「迟行迹/旧行迹」「履痕/屐痕」「莓苔/苍苔」），正文采用通行本并已在文中注明</li>
+  </ul>
+
+</main>
+
+<footer>
+  <div class="sig">诗苔 · 唐宋卷 · <a href="index.html" style="color:#3e6b3f;text-decoration:none;">Back to Moss &amp; Miles →</a></div>
+</footer>
+
+</body>
+</html>

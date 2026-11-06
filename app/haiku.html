@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haiku Translations | Moss &amp; Miles</title>
+<style>
+  :root{--moss-deep:#1e3a24;--moss:#3e6b3f;--moss-light:#7fa86b;--sand:#9a6b2f;--sand-light:#d9b380;--ink:#26312a;--paper:#f7f8f3;--grey:#75806f;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.9;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:10;padding:16px 28px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:.1em;background:linear-gradient(to bottom, rgba(10,20,12,.6), transparent);}
+  nav a{color:#e6f0dd;text-decoration:none;}
+  header{background:linear-gradient(160deg,#15291a,#1e3a24);color:#eef4e6;padding:130px 28px 60px;}
+  header .inner{max-width:820px;margin:0 auto;}
+  header .kicker{font-family:'Segoe UI',sans-serif;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--moss-light);margin-bottom:20px;}
+  header h1{font-size:clamp(28px,5vw,44px);font-weight:normal;}
+  header .meta{margin-top:22px;font-family:'Segoe UI',sans-serif;font-size:13px;color:#a9bda0;letter-spacing:.06em;}
+  main{max-width:820px;margin:0 auto;padding:64px 28px 80px;}
+  main > p.intro{max-width:640px;font-size:16.5px;margin-bottom:56px;}
+  .haiku{
+    background:#fff;border:1px solid #dfe6d6;border-radius:10px;
+    padding:44px 40px;margin-bottom:44px;
+    box-shadow:0 6px 26px rgba(30,58,36,.07);
+  }
+  .haiku .jp{
+    font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP','Songti SC',serif;
+    font-size:22px;line-height:2.2;color:var(--ink);margin-bottom:28px;
+  }
+  .haiku .jp span{display:block;}
+  .haiku .en{border-top:1px dashed #d8e0cf;padding-top:26px;}
+  .haiku .en .line{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
+    gap:18px;padding:9px 0;align-items:baseline;
+  }
+  .haiku .en .src{
+    font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP','Songti SC',serif;
+    color:var(--moss);font-size:15px;
+  }
+  .haiku .en .tr{font-size:17px;font-style:italic;color:#3c463c;}
+  @media(max-width:560px){.haiku .en .line{grid-template-columns:1fr;gap:2px;padding:12px 0;}}
+  .haiku .whole{margin-top:24px;padding:16px 20px;background:#f2f6ec;border-radius:8px;font-size:15.5px;color:#4a5548;}
+  .haiku .whole b{color:var(--sand);font-weight:600;}
+  footer{max-width:820px;margin:0 auto;padding:0 28px 70px;}
+  footer .sig{border-top:1px solid #dfe6d6;padding-top:26px;color:var(--grey);font-size:13px;font-family:'Segoe UI',sans-serif;letter-spacing:.05em;}
+</style>
+</head>
+<body>
+
+<nav><a href="index.html">← Moss &amp; Miles</a></nav>
+
+<header>
+  <div class="inner">
+    <div class="kicker">Language · Translation</div>
+    <h1>Haiku, Line by Line</h1>
+    <div class="meta">Uploaded: September 14, 2026 · Japanese → English</div>
+  </div>
+</header>
+
+<main>
+
+  <p class="intro">Two classic haiku, translated line by line. Japanese haiku resist being flattened into a single English sentence — so each line keeps its own shape first, and a complete reading follows after.</p>
+
+  <div class="haiku">
+    <div class="jp">
+      <span>露の世は</span>
+      <span>露の世ながら</span>
+      <span>さりながら</span>
+    </div>
+    <div class="en">
+      <div class="line"><span class="src">露の世は</span><span class="tr">This world of dew —</span></div>
+      <div class="line"><span class="src">露の世ながら</span><span class="tr">a world of dew it is,</span></div>
+      <div class="line"><span class="src">さりながら</span><span class="tr">and yet… and yet…</span></div>
+    </div>
+    <div class="whole"><b>As a whole:</b> The world is a world of dew — and yet, and yet. Everything passes like dew; knowing this changes nothing about how hard it is to let go.</div>
+  </div>
+
+  <div class="haiku">
+    <div class="jp">
+      <span>ふるさとや</span>
+      <span>寄るもさはるも</span>
+      <span>茨の花</span>
+    </div>
+    <div class="en">
+      <div class="line"><span class="src">ふるさとや</span><span class="tr">Ah, my old hometown —</span></div>
+      <div class="line"><span class="src">寄るもさはるも</span><span class="tr">draw near or brush against it,</span></div>
+      <div class="line"><span class="src">茨の花</span><span class="tr">wild thorn roses, all of it.</span></div>
+    </div>
+    <div class="whole"><b>As a whole:</b> Coming home — every approach, every touch, is thorn-roses. Homecoming pricks like briars: the closer you get, the more it stings.</div>
+  </div>
+
+</main>
+
+<footer><div class="sig">Moss &amp; Miles · Translation notebook</div></footer>
+
+</body>
+</html>

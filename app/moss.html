@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moss Notes: A Small Green World</title>
+<style>
+  :root{
+    --moss-deep:#1e3a24;
+    --moss:#3e6b3f;
+    --moss-light:#7fa86b;
+    --moss-pale:#e9f2e3;
+    --ink:#26312a;
+    --paper:#f7f9f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+  }
+  /* ---------- hero ---------- */
+  header{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    background:var(--moss-deep);
+  }
+  header .bg{
+    position:absolute;inset:0;
+    background:url('images/yinhu-trail.jpg') center/cover no-repeat;
+    opacity:.55;
+  }
+  header .veil{
+    position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(15,30,18,.92) 0%, rgba(15,30,18,.25) 55%, rgba(15,30,18,.35) 100%);
+  }
+  header .title{
+    position:relative;
+    max-width:760px;
+    margin:0 auto;
+    padding:0 28px 72px;
+    color:#f2f7ec;
+  }
+  header .kicker{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    color:#b8d4a8;
+    margin-bottom:18px;
+  }
+  header h1{
+    font-size:clamp(34px,6vw,58px);
+    font-weight:normal;
+    line-height:1.2;
+  }
+  header .sub{
+    margin-top:16px;
+    font-style:italic;
+    color:#cfe3c2;
+    font-size:17px;
+  }
+  /* ---------- article ---------- */
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:72px 28px 40px;
+  }
+  p{margin-bottom:1.6em;font-size:18px;}
+  p:first-of-type::first-letter{
+    font-size:3.4em;
+    float:left;
+    line-height:.85;
+    padding:6px 12px 0 0;
+    color:var(--moss);
+  }
+  .pull{
+    border-left:3px solid var(--moss-light);
+    padding:6px 0 6px 24px;
+    margin:44px 0;
+    font-style:italic;
+    font-size:21px;
+    color:var(--moss);
+    line-height:1.7;
+  }
+  /* ---------- figures ---------- */
+  figure{margin:48px 0;}
+  figure img{
+    width:100%;
+    display:block;
+    border-radius:6px;
+    box-shadow:0 12px 40px rgba(20,40,24,.18);
+  }
+  figcaption{
+    margin-top:14px;
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:.04em;
+    color:#6b7a6d;
+  }
+  figcaption b{color:var(--moss);font-weight:600;}
+  .pair{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  @media(max-width:640px){
+    .pair{grid-template-columns:1fr;}
+  }
+  /* ---------- footer ---------- */
+  footer{
+    max-width:760px;
+    margin:0 auto;
+    padding:24px 28px 80px;
+  }
+  .sig{
+    border-top:1px solid #d5e0cd;
+    padding-top:28px;
+    font-style:italic;
+    color:#6b7a6d;
+    font-size:15px;
+  }
+</style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:10;padding:16px 28px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:.1em;background:linear-gradient(to bottom, rgba(10,20,12,.55), transparent);"><a href="index.html" style="color:#e6f0dd;text-decoration:none;">← Moss &amp; Miles</a></nav>
+
+<header>
+  <div class="bg"></div>
+  <div class="veil"></div>
+  <div class="title">
+    <div class="kicker">Field Observation Diary</div>
+    <h1>Moss Notes: A Small Green World</h1>
+    <div class="sub">Yinhu Mountain trail &amp; the flowerpots on my balcony</div>
+  </div>
+</header>
+
+<main>
+
+  <p>The first patch found me on the Yinhu Mountain trail. I almost walked past it — a boulder by the path, half-buried in fallen leaves, wearing a coat of the brightest green. Up close, the moss was not one plant but a crowd: thousands of tiny shoots packed shoulder to shoulder, holding dew like a sponge holds water. Ferns and dry leaves pressed in from the edges, yet the moss simply filled every gap the stone offered. No roots digging deep, no flowers asking for attention. Just quiet coverage.</p>
+
+  <figure>
+    <img src="images/yinhu-trail.jpg" alt="Moss-covered boulder on the Yinhu Mountain trail, scattered with fallen leaves">
+    <figcaption><b>01 · Yinhu Mountain, on the trail.</b> A boulder wearing its green coat, ferns pressing in from the edges.</figcaption>
+  </figure>
+
+  <p>The other three patches live closer — in my flowerpots at home. They arrived uninvited, which is exactly why I kept them. Under the lens, a pot becomes a forest. One photograph shows slender stalks rising from the green carpet, each tipped with a capsule like a tiny lantern on a wire — the sporophytes, moss's way of casting spores into the wind. Another shows the miniature leaves overlapping like scales, star-shaped when seen from above, fresh as seedlings though the plant may be older than the pot itself.</p>
+
+  <figure>
+    <img src="images/pot-sporophytes.jpg" alt="Close-up of moss sporophytes, tiny green capsules on thin stalks">
+    <figcaption><b>02 · Home flowerpot, macro.</b> Sporophytes — tiny lanterns on wires, casting spores into the wind.</figcaption>
+  </figure>
+
+  <div class="pull">Moss asks for almost nothing — shade, moisture, time — and in return it builds the first soil, shelters the smallest insects, and greens the places nothing else will grow.</div>
+
+  <p>What moss teaches me is scale. To the mountain, this boulder is nothing. To the moss, the boulder is a continent, and the crack in its surface is a valley with its own weather. I run trails for distance, but moss rewards the opposite: slowing down, kneeling, looking at one square inch for a long time. There is a whole world there, thriving at ankle height, indifferent to being noticed.</p>
+
+  <figure class="pair">
+    <div>
+      <img src="images/pot-carpet.jpg" alt="Dense moss carpet with miniature overlapping leaves">
+      <figcaption><b>03 · The green carpet.</b> Leaves overlapping like scales, star-shaped from above.</figcaption>
+    </div>
+    <div>
+      <img src="images/pot-roots.jpg" alt="Moss growing around tangled roots in a flowerpot">
+      <figcaption><b>04 · Among the roots.</b> A pot becomes a forest when you kneel down to look.</figcaption>
+    </div>
+  </figure>
+
+  <p>Next time on the trail, I plan to walk the same section after rain and compare how the color deepens — moss photographs its own hydration.</p>
+
+</main>
+
+<footer>
+  <div class="sig">Observed on the Yinhu Mountain trail &amp; my balcony pots · <a href="index.html" style="color:#3e6b3f;text-decoration:none;">Back to Moss &amp; Miles →</a></div>
+</footer>
+
+</body>
+</html>

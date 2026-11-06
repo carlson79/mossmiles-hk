@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moss &amp; Miles — Run long distances. Notice small things.</title>
+<meta name="description" content="A runner's field notes. Moss is the microscope; miles lead to the distance. Recording one person's exploration of the road ahead — a small lamp for those feeling lost in the age of AI.">
+<style>
+  :root{
+    --moss-deep:#1e3a24;
+    --moss:#3e6b3f;
+    --moss-light:#7fa86b;
+    --moss-pale:#e9f2e3;
+    --sand:#9a6b2f;
+    --sand-light:#d9b380;
+    --ink:#26312a;
+    --paper:#f7f8f3;
+    --grey:#75806f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Georgia,'Times New Roman',serif;
+    background:var(--paper);color:var(--ink);line-height:1.9;
+  }
+  /* ---------- hero ---------- */
+  header{
+    position:relative;min-height:88vh;
+    display:flex;flex-direction:column;justify-content:center;
+    background:
+      radial-gradient(ellipse at 78% 18%, rgba(217,179,128,.16), transparent 50%),
+      radial-gradient(ellipse at 18% 82%, rgba(127,168,107,.18), transparent 55%),
+      linear-gradient(160deg,#15291a 0%,#1e3a24 60%,#241f15 100%);
+    color:#eef4e6;overflow:hidden;
+  }
+  header .inner{max-width:880px;margin:0 auto;padding:110px 32px 60px;}
+  header .kicker{
+    font-family:'Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:12px;letter-spacing:.45em;text-transform:uppercase;
+    color:var(--moss-light);margin-bottom:26px;
+  }
+  header h1{
+    font-size:clamp(44px,8vw,84px);font-weight:normal;line-height:1.1;
+  }
+  header h1 .amp{color:var(--sand-light);font-style:italic;}
+  header .cn{
+    margin-top:10px;font-size:clamp(18px,2.6vw,26px);
+    letter-spacing:.6em;color:#c8d8ba;
+    font-family:'Songti SC','Noto Serif SC',serif;
+  }
+  header .motto{
+    margin-top:38px;font-size:clamp(18px,2.6vw,23px);
+    color:#dce7d0;font-style:italic;
+  }
+  header .scroll{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    font-family:'Segoe UI',sans-serif;font-size:11px;letter-spacing:.35em;
+    color:#93a789;
+  }
+  /* ---------- two lenses ---------- */
+  .lenses{
+    max-width:880px;margin:0 auto;padding:88px 32px 30px;
+    display:grid;grid-template-columns:1fr 1fr;gap:28px;
+  }
+  .lens{
+    border:1px solid #dfe6d6;border-radius:10px;
+    padding:38px 34px;background:#fff;
+  }
+  .lens .icon{font-size:30px;}
+  .lens h3{margin:14px 0 10px;font-size:22px;font-weight:normal;}
+  .lens.m h3{color:var(--moss);}
+  .lens.mi h3{color:var(--sand);}
+  .lens p{font-size:15px;color:#5a6557;line-height:1.9;}
+  @media(max-width:680px){.lenses{grid-template-columns:1fr;}}
+  /* ---------- essays ---------- */
+  .essays{max-width:880px;margin:0 auto;padding:60px 32px 30px;}
+  .essays h2{
+    font-weight:normal;font-size:15px;letter-spacing:.4em;
+    color:var(--grey);font-family:'Segoe UI',sans-serif;
+    text-transform:uppercase;margin-bottom:36px;
+  }
+  .card{
+    display:grid;grid-template-columns:220px 1fr;
+    border-radius:10px;overflow:hidden;background:#fff;
+    box-shadow:0 6px 26px rgba(30,58,36,.08);
+    margin-bottom:28px;text-decoration:none;color:inherit;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(30,58,36,.16);}
+  .card .thumb{background-size:cover;background-position:center;min-height:170px;}
+  .card .body{padding:28px 30px;}
+  .card .tag{
+    font-family:'Segoe UI',sans-serif;font-size:11px;
+    letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px;
+  }
+  .card .tag.green{color:var(--moss);}
+  .card .tag.gold{color:var(--sand);}
+  .card h3{font-size:22px;font-weight:normal;line-height:1.4;margin-bottom:8px;}
+  .card .desc{font-size:14px;color:#67725f;line-height:1.8;}
+  .card .meta{margin-top:14px;font-size:12px;color:#9aa294;font-family:'Segoe UI',sans-serif;letter-spacing:.06em;}
+  @media(max-width:640px){.card{grid-template-columns:1fr;}.card .thumb{min-height:200px;}}
+  /* ---------- about ---------- */
+  .about{
+    max-width:880px;margin:40px auto 0;padding:60px 32px 90px;
+    border-top:1px solid #dfe6d6;
+  }
+  .about .name{
+    font-family:'Segoe UI',sans-serif;font-size:13px;letter-spacing:.35em;
+    text-transform:uppercase;color:var(--grey);margin-bottom:24px;
+  }
+  .about p{font-size:17px;color:#3c463c;max-width:640px;line-height:2;}
+  footer{
+    background:var(--moss-deep);color:#8fa687;
+    text-align:center;padding:36px 24px;
+    font-family:'Segoe UI',sans-serif;font-size:12.5px;letter-spacing:.12em;
+  }
+  footer .motto-f{color:#c8d8ba;margin-bottom:8px;font-family:Georgia,serif;font-style:italic;font-size:14px;letter-spacing:.05em;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="kicker">A Runner's Field Notes</div>
+    <h1>Moss <span class="amp">&amp;</span> Miles</h1>
+    <div class="cn">苔 径</div>
+    <p class="motto">Run long distances. Notice small things.</p>
+  </div>
+  <div class="scroll">SCROLL ↓</div>
+</header>
+
+<section class="lenses">
+  <div class="lens m">
+    <div class="icon">🔬</div>
+    <h3>Moss · The Microscope</h3>
+    <p>Kneel down and look at one square inch of world. Moss, dew, sporophytes — a complete universe hides in small things, and with it, the answer to "where am I right now."</p>
+  </div>
+  <div class="lens mi">
+    <div class="icon">🏃</div>
+    <h3>Miles · The Distance</h3>
+    <p>Run far. Four hundred hours, 28.7 kilometres, one Gobi crossing — running the question "where am I going" into an answer, one step at a time. The lighthouse is not elsewhere; it is on the road already walked.</p>
+  </div>
+</section>
+
+<section class="essays">
+  <h2>Field Notes</h2>
+
+  <a class="card" href="gobi-en.html">
+    <div class="thumb" style="background-image:url('images/gobi-track.jpg');"></div>
+    <div class="body">
+      <div class="tag gold">Miles · Ultra Gobi</div>
+      <h3>Brothers and Sisters of the Gobi</h3>
+      <div class="desc">Notes from the 20th Xuanzang Road Gobi Challenge — 28.70 km, 5:06:11. Cross the boundless Gobi, and everyone is your brother and sister.</div>
+      <div class="meta">Oct 2025 · Dunhuang, Gansu</div>
+    </div>
+  </a>
+
+  <a class="card" href="moss.html">
+    <div class="thumb" style="background-image:url('images/pot-sporophytes.jpg');"></div>
+    <div class="body">
+      <div class="tag green">Moss · Micro World</div>
+      <h3>Moss Notes: A Small Green World</h3>
+      <div class="desc">A boulder on the Yinhu Mountain trail, and the uninvited moss in my flowerpots. There is a whole world thriving at ankle height, indifferent to being noticed.</div>
+      <div class="meta">Yinhu Mountain &amp; home balcony</div>
+    </div>
+  </a>
+
+  <a class="card" href="poetry.html">
+    <div class="thumb" style="background-image:url('images/pot-carpet.jpg');"></div>
+    <div class="body">
+      <div class="tag green">Moss · Poetry 诗苔</div>
+      <h3>唐宋诗词中的青苔</h3>
+      <div class="desc">从王维「复照青苔上」到刘禹锡「百亩庭中半是苔」——收录唐宋苔诗代表作，附作者、原文、背景与心境，异文均经文献核对。</div>
+      <div class="meta">Tang &amp; Song Dynasties · 古诗卷</div>
+    </div>
+  </a>
+
+  <a class="card" href="haiku.html">
+    <div class="thumb" style="background-image:url('images/yinhu-trail.jpg');"></div>
+    <div class="body">
+      <div class="tag green">Moss · Haiku 俳句之苔</div>
+      <h3>從日本俳句观察青苔</h3>
+      <div class="desc">世界上最短的诗，与最安静的植物。芭蕉的蝉声渗入岩石，冬月照着相依着苔的磐石——侘寂精神的终极载体。</div>
+      <div class="meta">Bashō · Buson · Issa</div>
+    </div>
+  </a>
+
+  <a class="card" href="north-moss.html">
+    <div class="thumb" style="background-image:url('images/pot-roots.jpg');"></div>
+    <div class="body">
+      <div class="tag green">Moss · Keeping Notes 养苔手记</div>
+      <h3>北方养苔藓，确实有点难</h3>
+      <div class="desc">湿度 70% 以上、忌强光、忌自来水。在北方干燥的室内养活一盆青苔，是一场与环境的漫长谈判——土壤、光照、浇水、湿度四点心得。</div>
+      <div class="meta">Indoor moss keeping · Beijing</div>
+    </div>
+  </a>
+</section>
+
+<section class="about">
+  <div class="name">About</div>
+  <p>Moss is the microscope, revealing what lies beneath my feet; Miles lead toward the distance, and the trail between them is the process of thinking and exploring. This site records one person's footprints on the road to the future — and may it light a small lamp for those feeling lost in the age of AI.</p>
+</section>
+
+<footer>
+  <div class="motto-f">Run long distances. Notice small things.</div>
+  MOSS &amp; MILES · Written slowly, updated continuously
+</footer>
+
+</body>
+</html>
